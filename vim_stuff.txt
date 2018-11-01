@@ -1,0 +1,22 @@
+i -> insert before letter
+I -> insert after letter
+a -> append after letter
+A -> append after line
+o -> open new line after current line
+O -> open new line before current line
+
+r -> replace a single character
+R -> replace all following characters
+
+w -> move forward a single word
+W -> move forward a single WORD
+b -> move back a single word
+B -> move back a single WORD
+e -> move to the end of a word
+E -> move to the end of a WORD
+
+c -> change whatever we specify (using a modifier)
+C -> change to the end of the line
+
+x -> delete a single character after cursor (delete)
+X -> delete a single character before cursor (backspace)
