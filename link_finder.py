@@ -9,18 +9,19 @@ class LinkFinder(HTMLParser):
         self.page_url = page_url
         self.links = set()
 
-        # get all the start tags of the html
-        def handle_starttag(self, tag, attrs):
-            if tag == 'a':  # if the start tag is a link, get the href url
-                for (attribute, value) in attrs:
-                    if attribute == 'href':
-                        url = parse.urljoin(self.base_url, value)
-                        self.links.add(url)
+    # get all the start tags of the html
+    def handle_starttag(self, tag, attrs):
+        if tag == 'a':  # if the start tag is a link, get the href url
+            for (attribute, value) in attrs:
+                if attribute == 'href':
+                    url = parse.urljoin(self.base_url, value)
+                    self.links.add(url)
 
-        # return the list of links
-        def page_links(self):
-            return self.links
+    # return the list of links
+    def page_links(self):
+        return self.links
 
-        # handle errors
-        def error(self, message):
-            pass
+    # handle errors
+    def error(self, message):
+        print(message)
+        pass
