@@ -15,14 +15,15 @@ def create_project_dir(directory):
 def create_data_files(project_name, base_url):
     queue = project_name + '/queue.txt'
     crawled = project_name +'/crawled.txt'
-    if not os.path.isFile(queue):
+    if not os.path.isfile(queue):
         write_file(queue, base_url)
-    if not os.path.isFile(crawled):
+    if not os.path.isfile(crawled):
         write_file(crawled, '')
 
 # create a new file
-def write_file(path, file_name):
-    f = open(path+file_name, 'w')
+def write_file(path, data):
+    f = open(path, 'w')
+    f.write(data)
     f.close()
 
 # add data onto an existing file
