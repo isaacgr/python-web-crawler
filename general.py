@@ -42,6 +42,7 @@ def file_to_set(file_name):
     with open(file_name, 'rt') as f:
         for line in f:
             results.add(line.replace('\n', ''))
+    return results
 
 # iterate through a set, each item will be a new line in the file
 def set_to_file(links, file):
