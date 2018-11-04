@@ -18,12 +18,11 @@ def create_data_files(project_name, base_url):
     if not os.path.isFile(queue):
         write_file(queue, base_url)
     if not os.path.isFile(crawled):
-        _file(crawled, '')
+        write_file(crawled, '')
 
 # create a new file
 def write_file(path, file_name):
-    f = open(path, 'w')
-    f.write(data)
+    f = open(path+file_name, 'w')
     f.close()
 
 # add data onto an existing file
