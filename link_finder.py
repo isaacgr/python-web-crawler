@@ -10,6 +10,8 @@ class LinkFinder(HTMLParser):
         self.links = set()
 
     # get all the start tags of the html
+    #TODO: recursively search tags
+    # currently cant find a div tag nested in multiple divs
     def handle_starttag(self, tag, attrs):
         if tag == 'a':  # if the start tag is a link, get the href url
             for (attribute, value) in attrs:
